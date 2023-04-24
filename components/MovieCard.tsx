@@ -3,9 +3,6 @@ import React from "react";
 import Router, { useRouter } from "next/router";
 import FavoriteButton from "./FavoriteButton";
 import useInfoModal from "@/hooks/useInfoModal";
-import { profile } from "console";
-import Image from 'next/image';
-
 interface MovieCardProps {
     data: Record<string, any>;
 }
@@ -17,7 +14,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
     const { openModal } = useInfoModal()
     return (
         <div className="group bg-zinc-900 col-span relative h-[12vw]">
-            <Image src={data.thumbnailUrl} alt="Movie" draggable={false} className="
+            <img src={data.thumbnailUrl} alt="Movie" draggable={false} className="
         cursor-pointer
         object-cover
         transition
@@ -47,7 +44,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         group-hover:translate-x-[2vw]
         group-hover:opacity-100
       ">
-                <Image src={data.thumbnailUrl} alt="Movie" draggable={false} className="
+                <img src={data.thumbnailUrl} alt="Movie" draggable={false} className="
           cursor-pointer
           object-cover
           transition

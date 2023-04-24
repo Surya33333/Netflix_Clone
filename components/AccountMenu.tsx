@@ -5,13 +5,11 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 interface AccountMenuProps{
     visible: boolean;
 }
-const AccountMenu:React.FC<AccountMenuProps>  = ({
-    visible
-}) => {
+const AccountMenu:React.FC<AccountMenuProps>  = ({visible}) => {
+    const {data: currentUser} = useCurrentUser();
     if(!visible){
         return null;
     }
-    const {data: currentUser} = useCurrentUser();
     return (
     <div className="bg-black w-56 absolute top-20  right-10 py-5 flex-col border-2 border-gray-800 flex">
         <div className="flex flex-col gap-3">
